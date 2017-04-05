@@ -1,0 +1,23 @@
+---
+- name: "Monitor LSI Arrays"
+  hosts: lustre
+  tasks:
+    - name: "Check for hotspares and available disks"
+      shell: |
+        /opt/MegaRAID/storcli/storcli64 /call show | grep -iE "^[0-9]+.*(ugood|ghs)\s+\-" | wc -l
+      register: available_disk_count
+      changed_when: false
+      failed_when: available_disk_count.stdout|int < 3
+    - name: "Check for failed or bad disks"
+      shell: |
+        /opt/MegaRAID/storcli/storcli64 /call show | grep -iE "^[0-9]+.*(ubad|failed)\s+" 
+      register: available_disk_count
+      changed_when: false
+      failed_when: available_disk_count.stdout_lines|length > 0
+    - name: "Check for array health"
+      shell: |
+        /opt/MegaRAID/storcli/storcli64 /call/vall show | grep -iE "[0-9]+.*RAID6\s(pdgd|dgrd|ofln)" 
+      register: degraded_array_count
+      changed_when: false
+      failed_when: degraded_array_count.stdout_lines|length > 0 
+
