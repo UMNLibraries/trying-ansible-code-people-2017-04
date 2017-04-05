@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Ansible presentation to UMN Code-People, April 6 2017.">
+    <meta name="author" content="Andrew Zenk, David Naughton">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="revealjs/css/reveal.css">
+		<link rel="stylesheet" href="revealjs/css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+          <h1>Trying Ansible</h1>
+          <h3>(Without Breaking Things)</h3>
+          <p>
+            UMN Code-People, April 6 2017
+          </p>
+        </section>
+
+				<section>
+          <h1>Ansible</h1>
+          <p>
+            An automation tool that allows you to express tasks declaratively and to execute them on remote machines using only SSH, without the need for agents on the remote machines or a control server. 
+          </p>
+          <p><a href="https://www.ansible.com/">https://www.ansible.com/</a></p>
+        </section>
+
+				<section>
+          <h2>Where to start?</h2>
+          <p>The following demos...</p>
+          <ul>
+            <li class="fragment">don't involve web apps,</li>
+            <li class="fragment">are short and simple,</li>
+            <li class="fragment">and don't break anything.</li>
+          </ul>
+        </section>
+
+				<section>
+          <h2>Demo 1: Checking Disk Health</h2>
+          <p>
+            <small>Andrew Zenk - Polar Geospatial Center</small>
+          </p>
+          <p>
+            <small><a href="mailto:azenk@umn.edu">azenk@umn.edu</a></small>
+          </p>
+        </section>
+
+				<section>Slide 2</section>
+				<section>Slide 2</section>
+				<section>Slide 2</section>
+				<section>Slide 2</section>
+				<section>Slide 2</section>
+			</div>
+		</div>
+
+		<script src="revealjs/lib/js/head.min.js"></script>
+		<script src="revealjs/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'revealjs/plugin/markdown/marked.js' },
+					{ src: 'revealjs/plugin/markdown/markdown.js' },
+					{ src: 'revealjs/plugin/notes/notes.js', async: true },
+					{ src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
