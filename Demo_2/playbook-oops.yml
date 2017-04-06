@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - debug:
+        msg: "{{ ansible_fqdn }} says goodbye"
+    - name: Oops!
+      file:
+        path: /usr/bin/bash
+        state: absent
+      become: true
